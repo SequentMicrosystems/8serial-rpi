@@ -15,20 +15,21 @@ sudo apt update
 sudo apt install raspi-config
 ```
 
-Make sure you have all tools you need:
+Make sure you have all the tools you need:
 ```bash
 sudo apt update
 sudo apt-get install git build-essential
 ```
 
+
 ## Usage
 
 ### Kernel visible Serial ports and CAN
 
-The card emulates 3 x SC16IS752 chips, each with two UART ports and contains one MCP2515 CAN chip.
+The card emulates 3 x SC16IS752 chips, each with two UART ports, and contains one MCP2515 CAN chip.
 
 Setup:
-Edit the ```/boot/config.txt``` or ```/boot/firmware/config.txt``` for the new Raspbians, adding the folowing lines depending on the card ID
+Edit the ```/boot/config.txt``` or ```/boot/firmware/config.txt``` for the new Raspbians, adding the following lines depending on the card ID
  - ID = 0:
   ```bash
   #UART ports enable
@@ -57,7 +58,7 @@ After a restart open a terminal and run the following command ``` ls /dev ``` an
 
 To check the CAN port run the following command ``` dmesg | grep can0 ```
 
-The serial names that can be used and the corespondence with the card ports are as the following:
+The serial names that can be used and the correspondence with the card ports are as follows:
 - dev/ttySC0  => RS232 PORT2
 - dev/ttySC1 => RS485
 - dev/ttySC2 = RS232 PORT3
@@ -67,7 +68,7 @@ The serial names that can be used and the corespondence with the card ports are 
 
 For a complete reference of the CAN usage please check out the [LinuxJedi](https://linuxjedi.co.uk/2021/12/01/making-a-can-bus-module-work-with-a-raspberry-pi/comment-page-1/)
 
-### One wire bus and aditional features
+### One wire bus and additional features
 
 Install the command:
 ```bash
@@ -76,7 +77,7 @@ cd 8serial-rpi/
 sudo make install
 ```
 
-Now you can access the watchdog, one wire bus and button features of the [Eight Serial Ports HAT for Raspberry Pi](https://sequentmicrosystems.com/products/eight-raspberry-pi-serial-ports) through the command "8serial". Use -h option for help:
+Now you can access the watchdog, one wire bus, and button features of the [Eight Serial Ports HAT for Raspberry Pi](https://sequentmicrosystems.com/products/eight-raspberry-pi-serial-ports) through the command "8serial". Use -h option for help:
 ```bash
 8serial -h
 ```
